@@ -48,7 +48,7 @@
 	margin-right: auto; 
 	width: 164px;
 	height: 164px;
-	background-color: #cfdaed;
+	background-color: #bdf0ff;
 }
 
 .box {
@@ -328,7 +328,7 @@ input:hover {
 }
 
 .icon-grid {
-	background: #42445A;
+	background: #42445a;
 	border: #1F202B 5px solid;
 	border-radius: 25px;
 }
