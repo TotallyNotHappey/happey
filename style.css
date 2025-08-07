@@ -22,7 +22,7 @@
 }
 
 .hCon#border, .vbCon#border {
-	border: 1px #00048a solid;
+	border: 1px #00f2ff solid;
 	border-radius: 10px;
 }
 
@@ -40,23 +40,23 @@
 	padding-bottom: 5px;
 	font-size: 120%;
 	word-break: break-word;
-	background: #c894f9;
-	color: #00eaff;
+	background: #00eaff;
+	color: #5db1ba;
 	border: 0 solid transparent;
-	border-bottom: 5px solid #00048a;
+	border-bottom: 5px solid #c894f9;
 	transition: background 0.1s ease, transform 0.1s ease, padding 0.1s ease;
 }
 
 .anchor:hover {
 	background: #00eaff;
-	border-bottom: 5px solid #00048a;
+	border-bottom: 5px solid #c894f9;
 	transform: translateY(5px);
 }
 
 .anchor:active {
-	background: #6569ff;
-	border-bottom: 5px solid #00048a;
-	color: #c894f9;
+	background: #00eaff;
+	border-bottom: 5px solid #c894f9;
+	color: #5db1ba;
 	transform: scale(0.98);
 }
 
