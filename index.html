@@ -56,12 +56,6 @@ function switchPage(idToShow) {
 	</div>
 </div>
 
-<!-- AUDIO PLAYER -->
-<audio id="bgAudio" loop>
-  <source src="RUSHER.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
 <!-- PLAY/PAUSE BUTTON -->
 <button id="playPauseBtn" style="
   position: fixed;
@@ -86,65 +80,8 @@ function switchPage(idToShow) {
   transform: translateX(-50%);
   background: #111;
   border-radius: 6px;
+  z-index: 999;
 "></canvas>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const audio = document.getElementById("bgAudio");
-  const btn = document.getElementById("playPauseBtn");
-  const canvas = document.getElementById("visualizer");
-  const ctx = canvas.getContext("2d");
-
-  let isPlaying = false;
-
-  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  const analyser = audioCtx.createAnalyser();
-  analyser.fftSize = 64;
-  const source = audioCtx.createMediaElementSource(audio);
-  source.connect(analyser);
-  analyser.connect(audioCtx.destination);
-  const bufferLength = analyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-
-  function draw() {
-    requestAnimationFrame(draw);
-    analyser.getByteFrequencyData(dataArray);
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const barWidth = (canvas.width / bufferLength) * 2.5;
-    let x = 0;
-
-    for (let i = 0; i < bufferLength; i++) {
-      const barHeight = dataArray[i] / 2;
-      ctx.fillStyle = `rgb(${barHeight + 100}, 150, 255)`;
-      ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-      x += barWidth + 1;
-    }
-  }
-
-  draw();
-
-  function togglePlay() {
-    if (!isPlaying) {
-      audioCtx.resume();
-      audio.play().then(() => {
-        isPlaying = true;
-        btn.textContent = "Pause";
-      });
-    } else {
-      audio.pause();
-      isPlaying = false;
-      btn.textContent = "Play";
-    }
-  }
-
-  let started = false;
-  document.body.addEventListener("click", () => {
-    if (!started) {
-      audioCtx.resume();
-      audio.play().then(() => {
-        isPlaying = true;
-        btn.textC
 
 
 
