@@ -43,19 +43,19 @@
 	background: #00eaff;
 	color: #5db1ba;
 	border: 0 solid transparent;
-	border-bottom: 5px solid #c894f9;
+	border-bottom: 5px solid#00eaff;
 	transition: background 0.1s ease, transform 0.1s ease, padding 0.1s ease;
 }
 
 .anchor:hover {
 	background: #00eaff;
-	border-bottom: 5px solid #c894f9;
+	border-bottom: 5px solid #00eaff;
 	transform: translateY(5px);
 }
 
 .anchor:active {
 	background: #00eaff;
-	border-bottom: 5px solid #c894f9;
+	border-bottom: 5px solid #00eaff;
 	color: #5db1ba;
 	transform: scale(0.98);
 }
