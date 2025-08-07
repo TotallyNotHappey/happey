@@ -1,68 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image" href="fav-icon.png">
-	<meta name="theme-color" content="#0091ff">
-	<meta content="Happey" property="og:title" />
-	<meta content="I like to animate and shit" property="og:description" />
-	<meta content="https://totallynothappey.github.io/happey.github.io/" property="og:url" />
-	<link rel="stylesheet" href="style.css">
-	<title>Happey</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0091ff">
+
+  <link rel="icon" type="image/png" href="fav-icon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <meta property="og:title" content="Happey" />
+  <meta property="og:description" content="I like to animate and shit" />
+  <meta property="og:url" content="https://totallynothappey.github.io/happey.github.io/" />
+
+  <title>Happey</title>
 </head>
 
-<script>
-function switchPage(idToShow) {
-	document.querySelectorAll('.page').forEach(page => {
-		page.style.display = 'none';
-	});
-	document.getElementById(idToShow).style.display = 'block';
-}
-</script>
-
 <body id="body">
-<div class="center" style="margin-top: 40px;">
 
-<!-- home page -->
-<div id="homePage" class="page">
-	
-	<h1>Happey</h1>
-		
-	<p>Enby that can animate on Roblox</p>
+  <div class="center" style="margin-top: 40px;">
 
-	<div class="div-line" id="bold"></div>
+    <!-- Pages container -->
+    <div id="homePage" class="page">
 
-	<div class="hCon">
-		<p>Roblox Profile</p>
-		<div class="vbCon">
-			<div class="outline">
-			<a href="https://www.roblox.com/users/401257777/profile" class="anchor" style="color: #fff">Roblox Profile</a>
-			</div>
-		</div>
-	</div>
+      <h1>Happey</h1>
 
-	<div class="div-line"></div>
+      <p>Enby that can animate on Roblox</p>
 
-	<div class="hCon" id="border">
-		<img src="profile.png" alt="Miau" id="small">
-			
-		<p>This page is still in progress btw<br>Nothing much to show for now, but you can check my other socials here. Discord user is MaybeWasAngery btw</p>
+      <div class="div-line" id="bold"></div>
 
-		<div class="outline">
-			<a href="https://www.youtube.com/@TotallyNotHappey" class="anchor" style="color: #fff">YouTube</a>
-		</div>
-	</div>
-</div>
-<!-- AUDIO PLAYER -->
-<!-- AUDIO PLAYER -->
-<audio id="bgAudio" loop>
-  <source src="RUSHER.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+      <div class="hCon">
+        <p>Roblox Profile</p>
+        <div class="vbCon">
+          <div class="outline">
+            <a href="https://www.roblox.com/users/401257777/profile" class="anchor" style="color: #fff;">Roblox Profile</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="div-line"></div>
 
+      <div class="hCon" id="border">
+        <img src="profile.png" alt="Miau" id="small">
+
+        <p>This page is still in progress btw<br>Nothing much to show for now, but you can check my other socials here. Discord user is <strong>MaybeWasAngery</strong> btw</p>
+
+        <div class="outline">
+          <a href="https://www.youtube.com/@TotallyNotHappey" class="anchor" style="color: #fff;">YouTube</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Audio Player -->
+  <audio id="bgAudio" loop>
+    <source src="RUSHER.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Script: Put this after content for better loading -->
+  <script>
+    function switchPage(idToShow) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.style.display = 'none';
+      });
+      document.getElementById(idToShow).style.display = 'block';
+    }
+
+    // Optional: Auto-play audio if allowed
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('bgAudio');
+      // Audio autoplay requires user interaction on most browsers
+      // You can attach play to a button if needed
+      // Example: document.getElementById('playBtn').addEventListener('click', () => audio.play());
+    });
+  </script>
 
 </body>
+
 </html>
