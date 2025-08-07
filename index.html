@@ -57,7 +57,6 @@ function switchPage(idToShow) {
 </div>
 
 <!-- AUDIO PLAYER -->
-<!-- AUDIO PLAYER -->
 <audio id="bgAudio" loop>
   <source src="RUSHER.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
@@ -67,7 +66,8 @@ function switchPage(idToShow) {
 <button id="playPauseBtn" style="
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
   padding: 10px 15px;
   background-color: #0091ff;
@@ -82,7 +82,8 @@ function switchPage(idToShow) {
 <canvas id="visualizer" width="300" height="100" style="
   position: fixed;
   bottom: 70px;
-  left: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background: #111;
   border-radius: 6px;
 "></canvas>
@@ -96,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let isPlaying = false;
 
-  // Web Audio API setup
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   const analyser = audioCtx.createAnalyser();
   analyser.fftSize = 64;
@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
 
-  // Draw visualizer bars
   function draw() {
     requestAnimationFrame(draw);
     analyser.getByteFrequencyData(dataArray);
@@ -125,10 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   draw();
 
-  // Play/pause toggle
   function togglePlay() {
     if (!isPlaying) {
-      audioCtx.resume(); // resumes suspended context (required by browsers)
+      audioCtx.resume();
       audio.play().then(() => {
         isPlaying = true;
         btn.textContent = "Pause";
@@ -140,24 +138,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Start audio on first body click (browser policy)
   let started = false;
   document.body.addEventListener("click", () => {
     if (!started) {
-      audioCtx.resume(); // required in some browsers
+      audioCtx.resume();
       audio.play().then(() => {
         isPlaying = true;
-        btn.textContent = "Pause";
-        started = true;
-      }).catch(err => {
-        console.error("Autoplay error:", err);
-      });
-    }
-  }, { once: true });
+        btn.textC
 
-  btn.addEventListener("click", togglePlay);
-});
-</script>
 
 
 </body>
